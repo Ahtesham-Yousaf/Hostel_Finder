@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mirpur Hostel Finder</title>
+    <meta name="description" content="Login to your Mirpur Hostel Finder account.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .auth-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .auth-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 40px;
+        }
+        .auth-footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--gray-dark);
+        }
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gray-light);
+        }
+        .divider span {
+            background: var(--white);
+            padding: 0 20px;
+            position: relative;
+            color: var(--gray-medium);
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="listings.html" class="nav-link"><i class="fas fa-list"></i> Browse Hostels</a></li>
+                    <li><a href="register.html" class="nav-link"><i class="fas fa-user-plus"></i> Register</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="auth-container">
+            <div class="auth-header">
+                <a href="index.html" class="logo mb-3" style="font-size: 2rem;">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                <h1>Welcome Back</h1>
+                <p class="text-muted">Login to your account to continue</p>
+            </div>
+            
+            <div class="auth-card">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="student@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Password *</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                        <div class="d-flex justify-between align-center mt-1">
+                            <div class="form-text">
+                                <a href="#" id="forgotPassword">Forgot password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg btn-full">
+                        <i class="fas fa-sign-in-alt"></i> Login to Account
+                    </button>
+                    
+                    <div class="divider">
+                        <span>Or continue with</span>
+                    </div>
+                    
+                    <div class="grid grid-2 gap-3">
+                        <button type="button" class="btn btn-outline">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button type="button" class="btn btn-outline">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="register.html" class="text-primary">Sign up here</a></p>
+                    
+                    <div class="mt-4">
+                        <h4 class="mb-3">Login as:</h4>
+                        <div class="grid grid-2 gap-3">
+                            <a href="dashboard.html" class="btn btn-outline">
+                                <i class="fas fa-user-graduate"></i> Student
+                            </a>
+                            <a href="warden-dashboard.html" class="btn btn-outline">
+                                <i class="fas fa-user-tie"></i> Warden
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Demo Credentials -->
+            <div class="card mt-4">
+                <div class="card-content">
+                    <h4 class="mb-2"><i class="fas fa-info-circle text-primary"></i> Demo Credentials</h4>
+                    <p class="text-muted mb-2">Use these credentials for testing:</p>
+                    <div class="grid grid-2">
+                        <div>
+                            <small class="text-muted">Student:</small>
+                            <p class="mb-1"><strong>Email:</strong> student@test.com</p>
+                            <p><strong>Password:</strong> password123</p>
+                        </div>
+                        <div>
+                            <small class="text-muted">Warden:</small>
+                            <p class="mb-1"><strong>Email:</strong> warden@test.com</p>
+                            <p><strong>Password:</strong> password123</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirpur Hostel Finder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

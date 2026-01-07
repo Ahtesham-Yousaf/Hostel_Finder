@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirpur Hostel Finder - Find Student Accommodation in Mirpur AJK</title>
+    <meta name="description" content="Find and book verified hostels in Mirpur AJK. Safe, affordable student accommodation with online booking.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="listings.html" class="nav-link"><i class="fas fa-list"></i> Browse Hostels</a></li>
+                    <li><a href="#how-it-works" class="nav-link"><i class="fas fa-info-circle"></i> How It Works</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                    <li class="nav-actions">
+                        <a href="login.html" class="btn btn-outline btn-sm"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a href="register.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Register</a>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Find Your Perfect Hostel in Mirpur AJK</h1>
+                <p class="hero-subtitle">Safe, Verified, and Affordable Student Accommodation with Online Booking</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Verified Hostels</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2,500+</span>
+                        <span class="stat-label">Happy Students</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="search-box">
+                    <h3 class="search-title">Search Hostels</h3>
+                    <form class="search-form" id="searchForm">
+                        <div class="form-group">
+                            <label for="location" class="form-label"><i class="fas fa-map-marker-alt"></i> Location</label>
+                            <select class="form-control" id="location">
+                                <option value="">All Locations</option>
+                                <option value="model-town">Model Town</option>
+                                <option value="university-road">University Road</option>
+                                <option value="city-center">City Center</option>
+                                <option value="new-city">New City</option>
+                                <option value="allama-iqbal-road">Allama Iqbal Road</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gender" class="form-label"><i class="fas fa-user-friends"></i> For</label>
+                            <select class="form-control" id="gender">
+                                <option value="">All Genders</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="price" class="form-label"><i class="fas fa-tag"></i> Price Range</label>
+                            <select class="form-control" id="price">
+                                <option value="">Any Price</option>
+                                <option value="5000-8000">₨ 5,000 - 8,000</option>
+                                <option value="8000-12000">₨ 8,000 - 12,000</option>
+                                <option value="12000+">₨ 12,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="type" class="form-label"><i class="fas fa-bed"></i> Room Type</label>
+                            <select class="form-control" id="type">
+                                <option value="">Any Type</option>
+                                <option value="single">Single</option>
+                                <option value="double">Double</option>
+                                <option value="triple">Triple</option>
+                                <option value="quad">Quad</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search"></i> Search Hostels
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Hostels -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Featured Hostels</h2>
+                    <p class="text-muted">Top-rated accommodations chosen for quality and student satisfaction</p>
+                </div>
+                
+                <div class="grid grid-3 hostel-grid">
+                    <!-- Hostel Card 1 -->
+                    <div class="card hostel-card" data-id="hv001">
+                        <div class="card-badge">Verified</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Green View Hostel" 
+                                 loading="lazy">
+                            <div class="image-overlay">
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <span class="image-count">5 photos</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="hostel-title">Green View Hostel</h3>
+                            <div class="hostel-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Model Town, Mirpur</span>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-value">4.5</span>
+                                <span class="rating-count">(128 reviews)</span>
+                            </div>
+                            <span class="gender-badge gender-male">
+                                <i class="fas fa-male"></i> Male Only
+                            </span>
+                            
+                            <div class="card-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free WiFi</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>AC</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Mess</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>CCTV</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <div class="hostel-price">
+                                    <span class="price-label">Starting from</span>
+                                    <span class="price-amount">₨ 8,000</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                                <a href="hostel-detail.html" class="btn btn-primary">
+                                    View Details <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hostel Card 2 -->
+                    <div class="card hostel-card" data-id="hv002">
+                        <div class="card-badge">Top Rated</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Rose Girls Hostel" 
+                                 loading="lazy">
+                            <div class="image-overlay">
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <span class="image-count">7 photos</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="hostel-title">Rose Girls Hostel</h3>
+                            <div class="hostel-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>University Road, Mirpur</span>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-value">5.0</span>
+                                <span class="rating-count">(94 reviews)</span>
+                            </div>
+                            <span class="gender-badge gender-female">
+                                <i class="fas fa-female"></i> Female Only
+                            </span>
+                            
+                            <div class="card-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free WiFi</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>AC</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Mess</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>24/7 Security</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <div class="hostel-price">
+                                    <span class="price-label">Starting from</span>
+                                    <span class="price-amount">₨ 9,500</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                                <a href="hostel-detail.html" class="btn btn-primary">
+                                    View Details <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hostel Card 3 -->
+                    <div class="card hostel-card" data-id="hv003">
+                        <div class="card-badge">Budget Friendly</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80" 
+                                 alt="City Central Hostel" 
+                                 loading="lazy">
+                            <div class="image-overlay">
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <span class="image-count">4 photos</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="hostel-title">City Central Hostel</h3>
+                            <div class="hostel-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>City Center, Mirpur</span>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                                <span class="rating-count">(76 reviews)</span>
+                            </div>
+                            <span class="gender-badge gender-both">
+                                <i class="fas fa-user-friends"></i> Both Genders
+                            </span>
+                            
+                            <div class="card-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free WiFi</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-tv"></i>
+                                    <span>TV Lounge</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-dumbbell"></i>
+                                    <span>Gym</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-car"></i>
+                                    <span>Parking</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <div class="hostel-price">
+                                    <span class="price-label">Starting from</span>
+                                    <span class="price-amount">₨ 7,000</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                                <a href="hostel-detail.html" class="btn btn-primary">
+                                    View Details <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="listings.html" class="btn btn-primary btn-lg">
+                        View All Hostels <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How It Works</h2>
+                    <p class="text-muted">Simple steps to find your perfect hostel</p>
+                </div>
+                
+                <div class="grid grid-4">
+                    <div class="text-center">
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-search fa-3x text-primary"></i>
+                        </div>
+                        <h3>1. Search</h3>
+                        <p>Find hostels by location, price, and amenities</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-eye fa-3x text-primary"></i>
+                        </div>
+                        <h3>2. View Details</h3>
+                        <p>Check photos, reviews, and facilities</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-calendar-check fa-3x text-primary"></i>
+                        </div>
+                        <h3>3. Book Online</h3>
+                        <p>Secure your room with easy online booking</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-key fa-3x text-primary"></i>
+                        </div>
+                        <h3>4. Move In</h3>
+                        <p>Welcome to your new home in Mirpur!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What Students Say</h2>
+                    <p class="text-muted">Hear from students who found their perfect hostel</p>
+                </div>
+                
+                <div class="grid grid-3">
+                    <div class="card p-4">
+                        <div class="d-flex align-center mb-3">
+                            <div class="reviewer-avatar">A</div>
+                            <div>
+                                <h4 class="mb-0">Ahmed Khan</h4>
+                                <p class="text-muted mb-0">MUST University</p>
+                            </div>
+                        </div>
+                        <div class="rating mb-2">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Found Green View Hostel through this platform. The process was smooth and the hostel exceeded my expectations!"</p>
+                    </div>
+                    
+                    <div class="card p-4">
+                        <div class="d-flex align-center mb-3">
+                            <div class="reviewer-avatar">S</div>
+                            <div>
+                                <h4 class="mb-0">Sara Ali</h4>
+                                <p class="text-muted mb-0">Mirpur University</p>
+                            </div>
+                        </div>
+                        <div class="rating mb-2">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p>"As a female student, safety was my priority. Rose Girls Hostel provided excellent security and facilities."</p>
+                    </div>
+                    
+                    <div class="card p-4">
+                        <div class="d-flex align-center mb-3">
+                            <div class="reviewer-avatar">B</div>
+                            <div>
+                                <h4 class="mb-0">Bilal Ahmed</h4>
+                                <p class="text-muted mb-0">AJK University</p>
+                            </div>
+                        </div>
+                        <div class="rating mb-2">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"The online booking system saved me time and hassle. Found my accommodation before even arriving in Mirpur!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Mirpur Hostel Finder</h3>
+                    <p>Your trusted platform for finding student accommodation in Mirpur AJK.</p>
+                    <div class="contact-info mt-3">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>University Road, Mirpur AJK</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+92 300 1234567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@mirpurhostelfinder.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="listings.html"><i class="fas fa-chevron-right"></i> Browse Hostels</a></li>
+                        <li><a href="#how-it-works"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>For Students</h3>
+                    <ul class="footer-links">
+                        <li><a href="register.html"><i class="fas fa-chevron-right"></i> Register</a></li>
+                        <li><a href="login.html"><i class="fas fa-chevron-right"></i> Login</a></li>
+                        <li><a href="dashboard.html"><i class="fas fa-chevron-right"></i> Dashboard</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>For Hostels</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> List Your Hostel</a></li>
+                        <li><a href="warden-dashboard.html"><i class="fas fa-chevron-right"></i> Warden Login</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Support</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirpur Hostel Finder. All rights reserved. | Designed for Students in Mirpur AJK</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

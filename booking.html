@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Booking - Mirpur Hostel Finder</title>
+    <meta name="description" content="Complete your hostel booking with secure online payment.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .booking-steps {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .booking-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--gray-light);
+            z-index: 1;
+        }
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            max-width: 200px;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 2px solid var(--gray-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 auto 10px;
+            transition: all 0.3s;
+        }
+        .step.active .step-number {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--white);
+        }
+        .step.completed .step-number {
+            background: var(--success-color);
+            border-color: var(--success-color);
+            color: var(--white);
+        }
+        .step-label {
+            font-size: 0.875rem;
+            color: var(--gray-dark);
+        }
+        .step.active .step-label {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="listings.html" class="nav-link"><i class="fas fa-list"></i> Browse</a></li>
+                    <li><a href="dashboard.html" class="nav-link"><i class="fas fa-user"></i> My Account</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Booking Steps -->
+        <section class="bg-light py-4">
+            <div class="container">
+                <div class="booking-steps">
+                    <div class="step completed">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Select Hostel</div>
+                    </div>
+                    <div class="step completed">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Choose Room</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Your Details</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Payment</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form -->
+        <section class="section">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 40px;">
+                    <!-- Left: Booking Form -->
+                    <div>
+                        <div class="card p-4 mb-4">
+                            <h3 class="mb-4">Booking Details</h3>
+                            
+                            <div class="d-flex gap-4 mb-4">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=400&q=80" 
+                                     alt="Green View Hostel" 
+                                     style="width: 150px; height: 100px; object-fit: cover; border-radius: 8px;">
+                                <div>
+                                    <h4 class="mb-1">Green View Hostel</h4>
+                                    <p class="text-muted mb-2">Model Town, Mirpur</p>
+                                    <div class="d-flex gap-3">
+                                        <span class="text-muted"><i class="fas fa-bed"></i> Double Sharing</span>
+                                        <span class="text-muted"><i class="fas fa-calendar"></i> 3 Months</span>
+                                        <span class="text-muted"><i class="fas fa-user"></i> 1 Student</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-4">
+                            <h3 class="mb-4">Your Information</h3>
+                            
+                            <form id="bookingDetailsForm">
+                                <div class="grid grid-2 gap-3">
+                                    <div class="form-group">
+                                        <label class="form-label">First Name *</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Last Name *</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">CNIC Number *</label>
+                                    <input type="text" class="form-control" id="cnic" placeholder="XXXXX-XXXXXXX-X" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">University *</label>
+                                    <select class="form-control" id="university" required>
+                                        <option value="">Select University</option>
+                                        <option value="must">Mirpur University of Science & Technology (MUST)</option>
+                                        <option value="ajku">AJK University</option>
+                                        <option value="other">Other University</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Student ID Number *</label>
+                                    <input type="text" class="form-control" id="studentId" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Emergency Contact Person *</label>
+                                    <input type="text" class="form-control" id="emergencyName" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Emergency Contact Number *</label>
+                                    <input type="tel" class="form-control" id="emergencyPhone" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Special Requests (Optional)</label>
+                                    <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special requirements or requests..."></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="filter-checkbox">
+                                        <input type="checkbox" id="terms" required>
+                                        <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Cancellation Policy</a></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="d-flex justify-between mt-5">
+                                    <a href="hostel-detail.html" class="btn btn-outline">
+                                        <i class="fas fa-arrow-left"></i> Back
+                                    </a>
+                                    <button type="submit" class="btn btn-primary">
+                                        Continue to Payment <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Booking Summary -->
+                    <div>
+                        <div class="booking-widget" style="position: static;">
+                            <h3 class="mb-4">Booking Summary</h3>
+                            
+                            <div class="booking-summary">
+                                <div class="summary-item">
+                                    <span>Room Rent (3 months)</span>
+                                    <span>₨ 24,000</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Security Deposit</span>
+                                    <span>₨ 5,000</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Service Fee</span>
+                                    <span>₨ 500</span>
+                                </div>
+                                <div class="summary-total">
+                                    <span>Total Amount</span>
+                                    <span>₨ 29,500</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4 class="mb-3">Check-in Details</h4>
+                                <div class="contact-info">
+                                    <div class="contact-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Check-in: May 15, 2024</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Check-out: Aug 15, 2024</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Check-in time: 2:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4 class="mb-3">What's Included</h4>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> High-speed WiFi</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> 3 meals per day</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> Electricity & water</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> Room cleaning weekly</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> 24/7 security</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4 class="mb-3">Cancellation Policy</h4>
+                                <p class="text-muted" style="font-size: 0.875rem;">
+                                    Free cancellation up to 7 days before check-in. 50% refund if cancelled within 7 days. No refund for no-shows.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Need Help?</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-phone"></i> +92 300 123 4567</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> support@mirpurhostelfinder.com</a></li>
+                        <li><a href="#"><i class="fas fa-comment"></i> Live Chat</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirpur Hostel Finder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

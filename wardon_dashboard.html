@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warden Dashboard - Mirpur Hostel Finder</title>
+    <meta name="description" content="Manage your hostel properties and bookings.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="user-menu">
+                        <div class="user-avatar">W</div>
+                        <div class="user-dropdown">
+                            <a href="warden-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                            <a href="warden-dashboard.html?tab=hostels"><i class="fas fa-home"></i> My Hostels</a>
+                            <a href="warden-dashboard.html?tab=bookings"><i class="fas fa-calendar"></i> Bookings</a>
+                            <a href="warden-dashboard.html?tab=reports"><i class="fas fa-chart-bar"></i> Reports</a>
+                            <hr>
+                            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="dashboard">
+                    <!-- Sidebar -->
+                    <aside class="dashboard-sidebar">
+                        <div class="user-profile mb-4">
+                            <div class="user-avatar large mb-3" style="background: var(--secondary-color);">W</div>
+                            <h3 class="mb-1">Mr. Warden</h3>
+                            <p class="text-muted mb-3">Green View Hostel</p>
+                            <button class="btn btn-outline btn-sm btn-full" onclick="window.location.href='warden-dashboard.html?tab=profile'">
+                                <i class="fas fa-edit"></i> Edit Profile
+                            </button>
+                        </div>
+                        
+                        <ul class="sidebar-menu">
+                            <li>
+                                <a href="warden-dashboard.html" class="active">
+                                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="warden-dashboard.html?tab=hostels">
+                                    <i class="fas fa-home"></i> My Hostels
+                                    <span class="badge" style="margin-left: auto; background: var(--primary-color); color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem;">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="warden-dashboard.html?tab=bookings">
+                                    <i class="fas fa-calendar"></i> Bookings
+                                    <span class="badge" style="margin-left: auto; background: var(--warning-color); color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem;">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="warden-dashboard.html?tab=rooms">
+                                    <i class="fas fa-bed"></i> Room Management
+                                </a>
+                            </li>
+                            <li>
+                                <a href="warden-dashboard.html?tab=reports">
+                                    <i class="fas fa-chart-bar"></i> Reports
+                                </a>
+                            </li>
+                            <li>
+                                <a href="warden-dashboard.html?tab=profile">
+                                    <i class="fas fa-user"></i> Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="warden-dashboard.html?tab=settings">
+                                    <i class="fas fa-cog"></i> Settings
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                    
+                    <!-- Main Content -->
+                    <div class="dashboard-content">
+                        <div class="dashboard-header">
+                            <h2>Warden Dashboard</h2>
+                            <button class="btn btn-primary" onclick="window.location.href='warden-dashboard.html?tab=hostels&action=add'">
+                                <i class="fas fa-plus"></i> Add New Hostel
+                            </button>
+                        </div>
+                        
+                        <!-- Stats Cards -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon text-primary">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Hostels Listed</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon text-success">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Active Bookings</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon text-warning">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Pending Requests</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon text-info">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="stat-number">4.5</span>
+                                <span class="stat-label">Average Rating</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Actions -->
+                        <div class="card p-4 mb-4">
+                            <h3 class="mb-4">Quick Actions</h3>
+                            <div class="grid grid-4">
+                                <button class="btn btn-outline" onclick="window.location.href='warden-dashboard.html?tab=bookings'">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>View Bookings</span>
+                                </button>
+                                <button class="btn btn-outline" onclick="window.location.href='warden-dashboard.html?tab=rooms'">
+                                    <i class="fas fa-bed"></i>
+                                    <span>Manage Rooms</span>
+                                </button>
+                                <button class="btn btn-outline" onclick="window.location.href='warden-dashboard.html?tab=hostels&action=add'">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add Hostel</span>
+                                </button>
+                                <button class="btn btn-outline" onclick="window.location.href='warden-dashboard.html?tab=reports'">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>View Reports</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Bookings -->
+                        <div class="card p-4 mb-4">
+                            <div class="d-flex justify-between align-center mb-4">
+                                <h3>Recent Booking Requests</h3>
+                                <a href="warden-dashboard.html?tab=bookings" class="btn btn-outline btn-sm">
+                                    View All <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="table-responsive">
+                                <table class="booking-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student</th>
+                                            <th>Hostel</th>
+                                            <th>Dates</th>
+                                            <th>Room Type</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <strong>Ahmed Khan</strong>
+                                                <p class="text-muted mb-0" style="font-size: 0.875rem;">MUST University</p>
+                                            </td>
+                                            <td>Green View Hostel</td>
+                                            <td>May 15 - Aug 15</td>
+                                            <td>Double Sharing</td>
+                                            <td>₨ 24,000</td>
+                                            <td>
+                                                <span class="status-badge status-confirmed">
+                                                    <i class="fas fa-check"></i> Confirmed
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline btn-sm">
+                                                    View
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Ali Raza</strong>
+                                                <p class="text-muted mb-0" style="font-size: 0.875rem;">AJK University</p>
+                                            </td>
+                                            <td>Green View Hostel</td>
+                                            <td>Jun 1 - Sep 1</td>
+                                            <td>Single Room</td>
+                                            <td>₨ 36,000</td>
+                                            <td>
+                                                <span class="status-badge status-pending">
+                                                    <i class="fas fa-clock"></i> Pending
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex gap-1">
+                                                    <button class="btn btn-success btn-sm">
+                                                        <i class="fas fa-check"></i>
+                                                    </button>
+                                                    <button class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Your Hostels -->
+                        <div class="card p-4">
+                            <div class="d-flex justify-between align-center mb-4">
+                                <h3>Your Hostels</h3>
+                                <button class="btn btn-primary btn-sm" onclick="window.location.href='warden-dashboard.html?tab=hostels&action=add'">
+                                    <i class="fas fa-plus"></i> Add Hostel
+                                </button>
+                            </div>
+                            
+                            <div class="grid grid-2">
+                                <div class="card hostel-card">
+                                    <div class="card-badge" style="background: var(--success-color);">Active</div>
+                                    <div class="card-image">
+                                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" 
+                                             alt="Green View Hostel">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4 class="hostel-title">Green View Hostel</h4>
+                                        <div class="hostel-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Model Town, Mirpur
+                                        </div>
+                                        <div class="rating mb-3">
+                                            <div class="rating-stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <span class="rating-value">4.5</span>
+                                            <span class="rating-count">(128 reviews)</span>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-between mb-3">
+                                            <div>
+                                                <small class="text-muted">Rooms</small>
+                                                <p class="mb-0"><strong>10/15 occupied</strong></p>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted">Monthly Revenue</small>
+                                                <p class="mb-0"><strong>₨ 80,000</strong></p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card-footer">
+                                            <button class="btn btn-outline btn-sm">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-chart-bar"></i> View Stats
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card hostel-card">
+                                    <div class="card-badge" style="background: var(--warning-color);">Under Review</div>
+                                    <div class="card-image">
+                                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80" 
+                                             alt="City View Hostel">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4 class="hostel-title">City View Hostel</h4>
+                                        <div class="hostel-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            City Center, Mirpur
+                                        </div>
+                                        <div class="rating mb-3">
+                                            <div class="rating-stars">
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <span class="rating-value">0.0</span>
+                                            <span class="rating-count">(0 reviews)</span>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-between mb-3">
+                                            <div>
+                                                <small class="text-muted">Rooms</small>
+                                                <p class="mb-0"><strong>0/12 occupied</strong></p>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted">Status</small>
+                                                <p class="mb-0"><strong>Pending Approval</strong></p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card-footer">
+                                            <button class="btn btn-outline btn-sm">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn btn-primary btn-sm" disabled>
+                                                <i class="fas fa-clock"></i> Under Review
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirpur Hostel Finder. Warden Dashboard</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

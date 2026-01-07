@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Mirpur Hostel Finder</title>
+    <meta name="description" content="Create your Mirpur Hostel Finder account.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .auth-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .auth-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 40px;
+        }
+        .auth-footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--gray-dark);
+        }
+        .role-selection {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .role-option {
+            border: 2px solid var(--gray-light);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .role-option:hover {
+            border-color: var(--primary-light);
+            background: rgba(37, 99, 235, 0.05);
+        }
+        .role-option.selected {
+            border-color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+        }
+        .role-option i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+        .step-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="listings.html" class="nav-link"><i class="fas fa-list"></i> Browse Hostels</a></li>
+                    <li><a href="login.html" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="auth-container">
+            <div class="auth-header">
+                <a href="index.html" class="logo mb-3" style="font-size: 2rem;">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                <h1>Create Account</h1>
+                <p class="text-muted">Join thousands of students finding their perfect hostel</p>
+            </div>
+            
+            <div class="auth-card">
+                <!-- Step 1: Role Selection -->
+                <div class="form-step active" id="step1">
+                    <h3 class="mb-4 text-center">Who are you?</h3>
+                    
+                    <div class="role-selection">
+                        <div class="role-option" data-role="student">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>Student</h4>
+                            <p class="text-muted">Looking for hostel accommodation</p>
+                        </div>
+                        <div class="role-option" data-role="warden">
+                            <i class="fas fa-user-tie"></i>
+                            <h4>Hostel Warden</h4>
+                            <p class="text-muted">Managing hostel properties</p>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" id="userRole" value="">
+                    
+                    <div class="step-nav">
+                        <div></div>
+                        <button type="button" class="btn btn-primary" id="nextStep1">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Registration Form -->
+                <div class="form-step" id="step2">
+                    <h3 class="mb-4">Create Your Account</h3>
+                    
+                    <form id="registerForm">
+                        <div class="grid grid-2 gap-3">
+                            <div class="form-group">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        
+                        <div class="grid grid-2 gap-3">
+                            <div class="form-group">
+                                <label class="form-label">Password *</label>
+                                <input type="password" class="form-control" id="password" required>
+                                <div class="form-text">
+                                    Minimum 8 characters
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Confirm Password *</label>
+                                <input type="password" class="form-control" id="confirmPassword" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Student Fields -->
+                        <div id="studentFields" style="display: none;">
+                            <div class="form-group">
+                                <label class="form-label">University *</label>
+                                <select class="form-control" id="university">
+                                    <option value="">Select University</option>
+                                    <option value="must">Mirpur University of Science & Technology (MUST)</option>
+                                    <option value="ajku">AJK University</option>
+                                    <option value="mirpur-u">Mirpur University</option>
+                                    <option value="other">Other University</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Student ID *</label>
+                                <input type="text" class="form-control" id="studentId">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Gender *</label>
+                                <div class="filter-options">
+                                    <label class="filter-checkbox">
+                                        <input type="radio" name="gender" value="male">
+                                        <span>Male</span>
+                                    </label>
+                                    <label class="filter-checkbox">
+                                        <input type="radio" name="gender" value="female">
+                                        <span>Female</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Warden Fields -->
+                        <div id="wardenFields" style="display: none;">
+                            <div class="form-group">
+                                <label class="form-label">Hostel Name *</label>
+                                <input type="text" class="form-control" id="hostelName">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Hostel Address *</label>
+                                <textarea class="form-control" id="hostelAddress" rows="2"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">CNIC Number *</label>
+                                <input type="text" class="form-control" id="cnic" placeholder="XXXXX-XXXXXXX-X">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" id="terms" required>
+                                <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
+                            </label>
+                        </div>
+                        
+                        <div class="step-nav">
+                            <button type="button" class="btn btn-outline" id="prevStep2">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Create Account <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Step 3: Success -->
+                <div class="form-step" id="step3">
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-check-circle fa-5x text-success"></i>
+                        </div>
+                        <h3 class="mb-3">Account Created Successfully!</h3>
+                        <p class="text-muted mb-4">Your account has been created. You can now login and start using our platform.</p>
+                        
+                        <div class="grid grid-2 gap-3">
+                            <a href="login.html" class="btn btn-primary">
+                                <i class="fas fa-sign-in-alt"></i> Login Now
+                            </a>
+                            <a href="index.html" class="btn btn-outline">
+                                <i class="fas fa-home"></i> Go to Homepage
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html" class="text-primary">Login here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirpur Hostel Finder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

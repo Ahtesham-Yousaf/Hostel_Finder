@@ -1,0 +1,235 @@
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large desktops (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Tablets and small desktops (992px to 1199px) */
+@media (max-width: 1199px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .search-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hostel-info-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .booking-widget {
+        position: static;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets (768px to 991px) */
+@media (max-width: 991px) {
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.75rem; }
+    
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: var(--space-lg);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        padding: 12px 0;
+        justify-content: center;
+        border-bottom: 1px solid var(--gray-light);
+        width: 100%;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Hero */
+    .hero-stats {
+        gap: var(--space-lg);
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    /* Layouts */
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-sidebar {
+        position: static;
+    }
+    
+    .gallery-main {
+        grid-column: span 4;
+        height: 300px;
+    }
+    
+    .gallery-thumbs {
+        flex-direction: row;
+        grid-column: span 4;
+    }
+    
+    .gallery-thumb {
+        height: 100px;
+    }
+    
+    /* Cards */
+    .hostel-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (576px to 767px) */
+@media (max-width: 767px) {
+    .section {
+        padding: var(--space-lg) 0;
+    }
+    
+    .hero {
+        padding: var(--space-xl) 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .hostel-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .booking-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Small mobile (below 576px) */
+@media (max-width: 575px) {
+    .container {
+        padding: 0 var(--space-sm);
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .search-box {
+        padding: var(--space-md);
+    }
+    
+    .card-features {
+        justify-content: center;
+    }
+    
+    .card-footer {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+    
+    .hostel-price {
+        align-items: center;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+    }
+    
+    .dashboard-content {
+        padding: var(--space-md);
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #1a1a1a;
+        --dark-color: #f9fafb;
+        --white: #2d2d2d;
+        --gray-light: #404040;
+        --gray-medium: #666666;
+        --gray-dark: #999999;
+    }
+    
+    .card,
+    .filters-sidebar,
+    .booking-widget,
+    .dashboard-sidebar,
+    .dashboard-content {
+        background: #2d2d2d;
+        color: #f9fafb;
+    }
+    
+    .form-control {
+        background: #404040;
+        border-color: #666666;
+        color: #f9fafb;
+    }
+}

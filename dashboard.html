@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Mirpur Hostel Finder</title>
+    <meta name="description" content="Manage your bookings, wishlist, and profile.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="listings.html" class="nav-link"><i class="fas fa-list"></i> Browse</a></li>
+                    <li class="user-menu">
+                        <div class="user-avatar">A</div>
+                        <div class="user-dropdown">
+                            <a href="dashboard.html"><i class="fas fa-user"></i> My Profile</a>
+                            <a href="dashboard.html?tab=bookings"><i class="fas fa-calendar"></i> My Bookings</a>
+                            <a href="dashboard.html?tab=wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+                            <a href="dashboard.html?tab=reviews"><i class="fas fa-star"></i> My Reviews</a>
+                            <hr>
+                            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="dashboard">
+                    <!-- Sidebar -->
+                    <aside class="dashboard-sidebar">
+                        <div class="user-profile mb-4">
+                            <div class="user-avatar large mb-3">A</div>
+                            <h3 class="mb-1">Ahmed Khan</h3>
+                            <p class="text-muted mb-3">MUST University</p>
+                            <a href="dashboard.html?tab=profile" class="btn btn-outline btn-sm btn-full">
+                                <i class="fas fa-edit"></i> Edit Profile
+                            </a>
+                        </div>
+                        
+                        <ul class="sidebar-menu">
+                            <li>
+                                <a href="dashboard.html" class="active">
+                                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard.html?tab=bookings">
+                                    <i class="fas fa-calendar"></i> My Bookings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard.html?tab=wishlist">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    <span class="wishlist-count" style="margin-left: auto; background: var(--danger-color); color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard.html?tab=reviews">
+                                    <i class="fas fa-star"></i> My Reviews
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard.html?tab=profile">
+                                    <i class="fas fa-user"></i> Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard.html?tab=security">
+                                    <i class="fas fa-shield-alt"></i> Security
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                    
+                    <!-- Main Content -->
+                    <div class="dashboard-content">
+                        <div class="dashboard-header">
+                            <h2>Welcome back, Ahmed!</h2>
+                            <button class="btn btn-primary" onclick="window.location.href='listings.html'">
+                                <i class="fas fa-search"></i> Find Hostels
+                            </button>
+                        </div>
+                        
+                        <!-- Stats Cards -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon text-primary">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Active Bookings</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon text-success">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Current Stay</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon text-warning">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Saved Hostels</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon text-info">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Reviews Written</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Current Booking -->
+                        <div class="card p-4 mb-4">
+                            <div class="d-flex justify-between align-center mb-4">
+                                <h3>Current Stay</h3>
+                                <a href="dashboard.html?tab=bookings" class="btn btn-outline btn-sm">
+                                    View All <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="d-flex gap-4 align-center">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=400&q=80" 
+                                     alt="Green View Hostel"
+                                     style="width: 150px; height: 100px; object-fit: cover; border-radius: 8px;">
+                                <div class="flex-grow-1">
+                                    <h4 class="mb-1">Green View Hostel</h4>
+                                    <p class="text-muted mb-2">Model Town, Mirpur</p>
+                                    <div class="d-flex gap-4">
+                                        <div>
+                                            <small class="text-muted">Check-in</small>
+                                            <p class="mb-0"><strong>May 15, 2024</strong></p>
+                                        </div>
+                                        <div>
+                                            <small class="text-muted">Check-out</small>
+                                            <p class="mb-0"><strong>Aug 15, 2024</strong></p>
+                                        </div>
+                                        <div>
+                                            <small class="text-muted">Room</small>
+                                            <p class="mb-0"><strong>Double Sharing</strong></p>
+                                        </div>
+                                        <div>
+                                            <small class="text-muted">Status</small>
+                                            <span class="status-badge status-confirmed">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <h3 class="text-primary mb-1">₨ 8,000</h3>
+                                    <p class="text-muted mb-0">per month</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Upcoming Bookings -->
+                        <div class="card p-4 mb-4">
+                            <h3 class="mb-4">Upcoming Bookings</h3>
+                            
+                            <div class="table-responsive">
+                                <table class="booking-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Hostel</th>
+                                            <th>Dates</th>
+                                            <th>Room Type</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <strong>Rose Girls Hostel</strong>
+                                                <p class="text-muted mb-0" style="font-size: 0.875rem;">University Road</p>
+                                            </td>
+                                            <td>
+                                                Sep 1 - Dec 1, 2024
+                                            </td>
+                                            <td>Single Room</td>
+                                            <td>₨ 12,000</td>
+                                            <td>
+                                                <span class="status-badge status-pending">
+                                                    <i class="fas fa-clock"></i> Pending
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline btn-sm">
+                                                    View
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Wishlist -->
+                        <div class="card p-4">
+                            <div class="d-flex justify-between align-center mb-4">
+                                <h3>Saved Hostels</h3>
+                                <a href="dashboard.html?tab=wishlist" class="btn btn-outline btn-sm">
+                                    View All <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="grid grid-3">
+                                <div class="card hostel-card">
+                                    <div class="card-image">
+                                        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=400&q=80" 
+                                             alt="Rose Girls Hostel">
+                                        <div class="image-overlay">
+                                            <button class="wishlist-btn active">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <h4 class="hostel-title">Rose Girls Hostel</h4>
+                                        <div class="hostel-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            University Road
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="hostel-price">
+                                                <span class="price-amount">₨ 9,500</span>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm">
+                                                Book Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card hostel-card">
+                                    <div class="card-image">
+                                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=400&q=80" 
+                                             alt="City Central Hostel">
+                                        <div class="image-overlay">
+                                            <button class="wishlist-btn active">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <h4 class="hostel-title">City Central Hostel</h4>
+                                        <div class="hostel-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            City Center
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="hostel-price">
+                                                <span class="price-amount">₨ 7,000</span>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm">
+                                                Book Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirpur Hostel Finder. Student Dashboard</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

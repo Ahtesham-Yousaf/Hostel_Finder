@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Hostels in Mirpur - Mirpur Hostel Finder</title>
+    <meta name="description" content="Browse all available hostels in Mirpur AJK. Filter by location, price, amenities and more.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-home logo-icon"></i>
+                    <span class="logo-text">Mirpur<span class="logo-highlight">Hostel</span>Finder</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="listings.html" class="nav-link active"><i class="fas fa-list"></i> Browse Hostels</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Wishlist <span class="wishlist-count" style="display: none;">0</span></a></li>
+                    <li class="nav-actions">
+                        <a href="login.html" class="btn btn-outline btn-sm"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a href="register.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Register</a>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="bg-primary text-white">
+            <div class="container">
+                <div class="d-flex justify-between align-center py-4">
+                    <div>
+                        <h1 class="mb-1">Browse Hostels in Mirpur</h1>
+                        <p>Found 25 hostels matching your criteria</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline btn-white" id="toggleFilters">
+                            <i class="fas fa-filter"></i> Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters & Results -->
+        <section class="section">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 300px 1fr; gap: 30px;">
+                    <!-- Filters Sidebar -->
+                    <aside class="filters-sidebar" id="filtersSidebar">
+                        <div class="filter-group">
+                            <h3 class="filter-title"><i class="fas fa-search"></i> Search</h3>
+                            <input type="text" class="form-control" placeholder="Search hostels..." id="searchInput">
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-title"><i class="fas fa-map-marker-alt"></i> Location</h3>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="location" value="model-town" checked>
+                                    <span>Model Town</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="location" value="university-road">
+                                    <span>University Road</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="location" value="city-center">
+                                    <span>City Center</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="location" value="new-city">
+                                    <span>New City</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-title"><i class="fas fa-user-friends"></i> Gender</h3>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="radio" name="gender" value="all" checked>
+                                    <span>All</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="radio" name="gender" value="male">
+                                    <span>Male Only</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="radio" name="gender" value="female">
+                                    <span>Female Only</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-title"><i class="fas fa-tag"></i> Price Range</h3>
+                            <input type="range" class="price-slider" min="5000" max="20000" value="12000" step="1000">
+                            <div class="price-range">
+                                <span>₨ 5,000</span>
+                                <span>₨ 20,000</span>
+                            </div>
+                            <p class="text-center mt-2">Selected: <strong id="priceValue">₨ 12,000</strong></p>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-title"><i class="fas fa-star"></i> Minimum Rating</h3>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="radio" name="rating" value="0" checked>
+                                    <span>Any Rating</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="radio" name="rating" value="4">
+                                    <span>4+ Stars</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="radio" name="rating" value="4.5">
+                                    <span>4.5+ Stars</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="radio" name="rating" value="5">
+                                    <span>5 Stars Only</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-title"><i class="fas fa-check-circle"></i> Amenities</h3>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="amenities" value="wifi">
+                                    <span>WiFi</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="amenities" value="ac">
+                                    <span>Air Conditioning</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="amenities" value="mess">
+                                    <span>Mess/Food</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="amenities" value="laundry">
+                                    <span>Laundry</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="amenities" value="parking">
+                                    <span>Parking</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-full" id="applyFilters">
+                            <i class="fas fa-filter"></i> Apply Filters
+                        </button>
+                        <button class="btn btn-outline btn-full mt-2" id="resetFilters">
+                            <i class="fas fa-redo"></i> Reset All
+                        </button>
+                    </aside>
+                    
+                    <!-- Results Section -->
+                    <div>
+                        <!-- Sort Options -->
+                        <div class="d-flex justify-between align-center mb-4">
+                            <div>
+                                <select class="form-control" style="width: auto;" id="sortSelect">
+                                    <option value="recommended">Recommended</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Highest Rated</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span class="text-muted">Showing 1-8 of 25 hostels</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Hostel Grid -->
+                        <div class="hostel-grid grid-2" id="hostelResults">
+                            <!-- Hostels will be loaded here by JavaScript -->
+                            <div class="spinner"></div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav class="pagination mt-5">
+                            <a href="#" class="pagination-link"><i class="fas fa-chevron-left"></i></a>
+                            <a href="#" class="pagination-link active">1</a>
+                            <a href="#" class="pagination-link">2</a>
+                            <a href="#" class="pagination-link">3</a>
+                            <a href="#" class="pagination-link">4</a>
+                            <a href="#" class="pagination-link"><i class="fas fa-chevron-right"></i></a>
+                        </nav>
+                        
+                        <!-- No Results State -->
+                        <div class="empty-state" id="noResults" style="display: none;">
+                            <i class="fas fa-search"></i>
+                            <h3>No Hostels Found</h3>
+                            <p>Try adjusting your filters or search terms</p>
+                            <button class="btn btn-primary mt-3" id="resetSearch">
+                                <i class="fas fa-redo"></i> Reset Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Mirpur Hostel Finder</h3>
+                    <p>Your trusted platform for finding student accommodation in Mirpur AJK.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="listings.html"><i class="fas fa-chevron-right"></i> Browse Hostels</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Need Help?</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Support</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Safety Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirpur Hostel Finder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+        // Sample hostel data for listings page
+        const sampleHostels = [
+            {
+                id: 'hv001',
+                name: 'Green View Hostel',
+                location: 'Model Town, Mirpur',
+                price: 8000,
+                rating: 4.5,
+                reviews: 128,
+                gender: 'male',
+                image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80',
+                amenities: ['wifi', 'ac', 'mess', 'security']
+            },
+            {
+                id: 'hv002',
+                name: 'Rose Girls Hostel',
+                location: 'University Road, Mirpur',
+                price: 9500,
+                rating: 5.0,
+                reviews: 94,
+                gender: 'female',
+                image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
+                amenities: ['wifi', 'ac', 'mess', 'laundry']
+            },
+            // Add more sample hostels as needed
+        ];
+    </script>
+</body>
+</html>
