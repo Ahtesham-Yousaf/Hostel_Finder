@@ -144,7 +144,7 @@ function handleLogin(form) {
                 if (user.role === 'student') {
                     window.location.href = 'dashboard.html';
                 } else if (user.role === 'warden') {
-                    window.location.href = 'warden-dashboard.html';
+                    window.location.href = 'wardon_dashboard.html';
                 }
             }, 1000);
             
@@ -392,7 +392,7 @@ function updateUIForLoggedOutUser() {
 
 // Protect routes (e.g., dashboard pages)
 function protectRoutes(user) {
-    const protectedPaths = ['dashboard.html', 'warden-dashboard.html', 'booking.html'];
+    const protectedPaths = ['dashboard.html', 'wardon_dashboard.html', 'booking.html'];
     const currentPath = window.location.pathname;
     
     // Check if current page is protected
@@ -405,14 +405,14 @@ function protectRoutes(user) {
     }
     
     // Check role-based access
-    if (currentPath.includes('warden-dashboard.html') && user.role !== 'warden') {
+    if (currentPath.includes('wardon_dashboard.html') && user.role !== 'warden') {
         showToast('Access denied. Warden access required.', 'error');
         window.location.href = 'dashboard.html';
     }
     
     if (currentPath.includes('dashboard.html') && user.role !== 'student') {
         showToast('Access denied. Student access required.', 'error');
-        window.location.href = 'warden-dashboard.html';
+        window.location.href = 'wardon_dashboard.html';
     }
 }
 
