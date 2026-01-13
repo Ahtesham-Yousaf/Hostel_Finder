@@ -27,7 +27,7 @@ function initSearch() {
             
             // Redirect to listings page with search parameters
             const params = new URLSearchParams(formData).toString();
-            window.location.href = `listings.html?${params}`;
+            window.location.href = `listing.html?${params}`;
         });
     }
 }
@@ -351,7 +351,7 @@ function createHostelCard(hostel) {
                     <span class="price-amount">₨ ${hostel.price.toLocaleString()}</span>
                     <span class="price-period">/month</span>
                 </div>
-                <a href="hostel-detail.html" class="btn btn-primary">
+                <a href="hostel_details.html" class="btn btn-primary">
                     View Details <i class="fas fa-arrow-right"></i>
                 </a>
             </div>

@@ -35,43 +35,54 @@
     }
 }
 
-/* Tablets (768px to 991px) */
+/* Tablets (768px to 991px) - MODIFIED FOR OPTION 1 */
 @media (max-width: 991px) {
     h1 { font-size: 2.25rem; }
     h2 { font-size: 1.75rem; }
     
-    /* Navigation */
+    /* ⭐ CHANGED: Tablet-specific navigation styling */
+    /* Navigation remains VISIBLE on tablet, only hides on mobile */
     .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        flex-direction: column;
-        padding: var(--space-lg);
-        box-shadow: var(--shadow-lg);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all var(--transition-normal);
-        z-index: 999;
+        display: flex;  /* ← CHANGED: Keep visible */
+        position: static;  /* ← CHANGED: Not fixed */
+        transform: none;  /* ← CHANGED: No animation */
+        opacity: 1;  /* ← CHANGED: Fully visible */
+        visibility: visible;  /* ← CHANGED: Always visible */
+        box-shadow: none;  /* ← CHANGED: No shadow */
+        background: transparent;  /* ← CHANGED: Transparent background */
+        flex-direction: row;  /* ← CHANGED: Horizontal, not vertical */
+        padding: 0;  /* ← CHANGED: Remove extra padding */
+        gap: 15px;  /* ← ADDED: Space between items */
     }
     
+    /* Remove active class styles for tablet */
     .nav-menu.active {
-        transform: translateY(0);
+        transform: none;
         opacity: 1;
         visibility: visible;
     }
     
     .nav-link {
-        padding: 12px 0;
+        padding: 8px 12px;  /* ← CHANGED: Smaller padding for tablet */
         justify-content: center;
-        border-bottom: 1px solid var(--gray-light);
-        width: 100%;
+        border-bottom: none;  /* ← CHANGED: Remove borders */
+        width: auto;  /* ← CHANGED: Auto width */
     }
     
+    /* ⭐ CHANGED: Hide hamburger on tablet (since nav is visible) */
     .menu-toggle {
-        display: block;
+        display: none !important;  /* ← CHANGED: Hide hamburger */
+    }
+    
+    /* Tablet-specific adjustments for buttons */
+    .nav-actions {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .btn-sm {
+        padding: 6px 10px;
+        font-size: 0.85rem;
     }
     
     /* Hero */
@@ -121,8 +132,63 @@
     }
 }
 
-/* Mobile (576px to 767px) */
+/* ⭐ NEW: Mobile-only navigation hiding (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation - ONLY hides on mobile */
+    .nav-menu {
+        display: none;  /* ← Hides on mobile only */
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: var(--space-lg);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        display: flex;  /* ← Shows when active */
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        padding: 12px 0;
+        justify-content: center;
+        border-bottom: 1px solid var(--gray-light);
+        width: 100%;
+    }
+    
+    /* Show hamburger only on mobile */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Mobile-specific button adjustments */
+    .nav-actions {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 15px;
+        border-top: 1px solid var(--gray-light);
+    }
+    
+    .nav-actions .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile (576px to 767px) - UPDATED */
 @media (max-width: 767px) {
+    /* ⭐ NOTE: Navigation styles are now in the 768px section above */
+    
     .section {
         padding: var(--space-lg) 0;
     }
